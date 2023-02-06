@@ -73,14 +73,14 @@ let categoryColors = [
 		</div>
 	</div>
 {:else if categories && categories.length}
-	<div class="px-3 py-5 sm:p-10">
+	<div class="px-3 py-5 sm:p-10" dir="rtl">
 		<div class="container mx-auto max-w-6xl">
 			<div class="flex items-center justify-center space-x-2 pb-5 lg:pb-10">
 				<hr class="h-1 flex-1 border-gray-300" />
 
 				<div
 					class="flex items-center justify-center p-2 text-center font-semibold uppercase tracking-wider text-primary-500 sm:px-8 sm:text-lg">
-					Categories
+					קטגוריות
 				</div>
 
 				<hr class="h-1 flex-1 border-gray-300" />
@@ -160,7 +160,7 @@ let categoryColors = [
 
 						<h6
 							class="w-full overflow-ellipsis text-center text-xs capitalize tracking-tighter text-gray-500 line-clamp-2 group-hover:font-medium group-hover:text-primary-500">
-							More
+							עוד
 						</h6>
 					</a>
 				</div>
@@ -168,7 +168,7 @@ let categoryColors = [
 
 			<!-- Desktop(starts from screen size : sm) -->
 
-			<div class="hidden sm:block">
+			<div class="hidden sm:block" dir="rtl">
 				<div class="grid grid-cols-4 items-start justify-items-center gap-4 lg:grid-cols-6">
 					{#each categories as category, i}
 						{#if i < 12}
@@ -223,7 +223,7 @@ let categoryColors = [
 						href="/sitemap"
 						aria-label="Click to route sitemap"
 						class="link font-medium hover:underline">
-						View All
+						הצגת הכל
 					</a>
 				</div>
 			</div>

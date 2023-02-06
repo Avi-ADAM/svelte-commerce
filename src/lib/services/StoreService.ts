@@ -39,6 +39,7 @@ export const getStoreData = async ({
 	server = false,
 	sid = null
 }: any) => {
+
 	let storeRes: any = {}
 	let store = {
 		id,
@@ -76,6 +77,8 @@ export const getStoreData = async ({
 	}
 	if (!cookieStore || cookieStore === 'undefined') {
 		const uri = new URL(url)
+					console.log(uri,"storeservis")
+
 		storeRes = await getBySid(`init?domain=${DOMAIN || uri.host}`)
 		store = {
 			id: storeRes.storeOne._id,
@@ -113,6 +116,8 @@ export const getStoreData = async ({
 		}
 		cookies.set('store', JSON.stringify(store), { path: '/' })
 	} else {
+							console.log("el","storeservis")
+
 		store = JSON.parse(cookieStore)
 	}
 	storeRes.storeOne = store

@@ -237,14 +237,14 @@ function handleSearchBox() {
 				type="button"
 				class="text-left text-sm font-semibold text-primary-500 hover:underline focus:outline-none"
 				on:click="{toggleShowAllList}">
-				See all
+				להציג הכל
 			</button>
 		{:else if showAllList}
 			<button
 				type="button"
 				class="text-left text-sm font-semibold text-primary-500 hover:underline focus:outline-none"
 				on:click="{toggleShowAllList}">
-				Close
+				סגירה
 			</button>
 		{/if}
 	</ul>

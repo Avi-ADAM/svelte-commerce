@@ -31,6 +31,6 @@ function go() {
 			></path>
 		</svg>
 
-		<span>Back</span>
+		<span>חזרה</span>
 	</button>
 </section>

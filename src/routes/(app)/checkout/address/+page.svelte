@@ -23,7 +23,7 @@ async function refreshAddress() {
 
 <SEO {...seoProps} />
 
-<div class="container mx-auto min-h-screen w-full max-w-6xl p-3 py-5 sm:p-10">
+<div class="container mx-auto min-h-screen w-full max-w-6xl p-3 py-5 sm:p-10" dir="rtl">
 	<Error err="{data.err}" />
 
 	<CheckoutHeader selected="address" />
@@ -32,7 +32,7 @@ async function refreshAddress() {
 	<div class="mt-5 md:mt-10 lg:flex lg:justify-center lg:gap-10 xl:gap-20">
 		<div class="w-full flex-1">
 			<h1 class="text-xl font-bold capitalize tracking-wide sm:text-2xl">
-				Select Delivery Address
+				בחירת כתובת למשלוח
 			</h1>
 
 			{#if data.myAddresses?.data?.length > 0}
@@ -73,14 +73,14 @@ async function refreshAddress() {
 
 					<span
 						class="mt-2 text-sm font-medium text-gray-700 group-hover:text-blue-500 sm:text-base">
-						ADD NEW ADDRESS
+						הוספת כתובת חדשה
 					</span>
 				</a>
 			</div>
 		</div>
 
 		<div class="w-full lg:w-80 lg:flex-shrink-0 lg:flex-grow-0">
-			<h2 class="text-xl font-bold capitalize tracking-wide sm:text-2xl">Cart Summary</h2>
+			<h2 class="text-xl font-bold capitalize tracking-wide sm:text-2xl">סיכום הזמנה</h2>
 			{#if data.selectedAddress}
 				<Pricesummary
 					cart="{data.cart}"

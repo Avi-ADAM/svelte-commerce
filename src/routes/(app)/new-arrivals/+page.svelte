@@ -9,8 +9,8 @@ import SEO from '$lib/components/SEO/index.svelte'
 export let data
 
 let seoProps = {
-	title: `New arrivals`,
-	description: `New arrivals`
+	title: `חדש על המדף`,
+	description: `מוצרים חדשים`
 }
 
 let categories = [
@@ -30,7 +30,7 @@ let showItemCount = 10
 
 <SEO {...seoProps} />
 
-<div>
+<div dir="rtl">
 	{#if data.newArrivals && data.newArrivals[0]}
 		<div class="mb-20">
 			<!-- BANNER -->
@@ -89,7 +89,7 @@ let showItemCount = 10
 							loadingringsize="sm"
 							class="text-sm"
 							on:click="{() => (showItemCount = showItemCount + 1)}">
-							Show More
+							להציג יותר
 						</PrimaryButton>
 					</div>
 				{/if}
@@ -97,7 +97,7 @@ let showItemCount = 10
 				<div class="flex items-center justify-center">
 					<div class="m-10 flex flex-col items-center justify-center text-center">
 						<h1 class="mb-10 text-xl font-semibold capitalize sm:text-2xl lg:text-3xl">
-							Oops!!, No products there
+							אין מוצרים מתאימים
 						</h1>
 
 						<div class="mb-5">
@@ -107,9 +107,9 @@ let showItemCount = 10
 								class="h-20 w-20 object-contain text-xs" />
 						</div>
 
-						<p class="mb-5 text-center text-gray-500">No data found</p>
+						<p class="mb-5 text-center text-gray-500">לא נמצא מידע</p>
 
-						<PrimaryButton class="text-sm" on:click="{() => goto('/')}">Back to Home</PrimaryButton>
+						<PrimaryButton class="text-sm" on:click="{() => goto('/')}">חזרה לדף הבית</PrimaryButton>
 					</div>
 				</div>
 			{/if}
@@ -118,7 +118,7 @@ let showItemCount = 10
 		<div class="flex h-[70vh] items-center justify-center">
 			<div class="m-10 flex flex-col items-center justify-center text-center">
 				<h1 class="mb-10 text-xl font-semibold capitalize sm:text-2xl lg:text-3xl">
-					Oops!!, No products there
+					לא נמצאו מוצרים מתאימים
 				</h1>
 
 				<div class="mb-5">
@@ -128,9 +128,9 @@ let showItemCount = 10
 						class="h-20 w-20 object-contain text-xs" />
 				</div>
 
-				<p class="mb-5 text-center text-gray-500">No data found</p>
+				<p class="mb-5 text-center text-gray-500">אין מידע</p>
 
-				<PrimaryButton class="text-sm" on:click="{() => goto('/')}">Back to Home</PrimaryButton>
+				<PrimaryButton class="text-sm" on:click="{() => goto('/')}">חזרה לדף הבית</PrimaryButton>
 			</div>
 		</div>
 	{/if}

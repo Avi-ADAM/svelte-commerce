@@ -24,8 +24,8 @@
 import { browser } from '$app/environment'
 import { onMount } from 'svelte'
 import { page } from '$app/stores'
-import appStore from '$lib/assets/app/app-store.svg'
-import googlePlay from '$lib/assets/app/google-play.png'
+//import appStore from '$lib/assets/app/app-store.svg'
+//import googlePlay from '$lib/assets/app/google-play.png'
 // import { fetchFooterCategories } from './services/CategoryService'
 
 export let me, store, popularSearches, megamenu
@@ -63,34 +63,34 @@ function getYear() {
 
 let footerItems = [
 	{
-		heading: 'Store Info',
+		heading: 'פרטים',
 		subMenu: [
-			{ title: 'About Us', link: '/about-us', new: false },
-			{ title: 'Privacy Policy', link: '/privacy-policy', new: false },
+			{ title: 'אודותינו', link: '/about-us', new: false },
+			{ title: 'הצהרת פרטיות', link: '/privacy-policy', new: false },
 			{
-				title: 'Terms & Conditions',
+				title: 'תנאי השימוש',
 				link: '/terms-conditions',
 				new: false
 			},
 			{
-				title: 'Payments & Returns',
+				title: 'תשלום והחזרות',
 				link: '/payments-returns',
 				new: false
 			},
 			{
-				title: 'Printing Terms & Cancellation Policy',
+				title: 'מדיניות החזרות',
 				link: '/printing-terms-cancellation-policy',
 				new: false
 			},
-			{ title: 'Track Your Order', link: '/my/orders?sort=-updatedAt', new: false },
-			{ title: 'Bulk Order Inquiry', link: '/bulk-order-inquiry', new: true },
-			{ title: 'Blogs', link: '/blogs', new: false },
-			{
-				title: 'Join as Vendor',
-				link: `${$page.data.store?.adminUrl}?role=vendor&store=${$page.data.store?.id}`,
-				new: true,
-				target: '_blank'
-			}
+			{ title: 'ההזמנוות שלי', link: '/my/orders?sort=-updatedAt', new: false },
+			//{ title: 'Bulk Order Inquiry', link: '/bulk-order-inquiry', new: true },
+			//{ title: 'Blogs', link: '/blogs', new: false },
+			//{
+			//	title: 'Join as Vendor',
+			//	link: `${$page.data.store?.adminUrl}?role=vendor&store=${$page.data.store?.id}`,
+			//	new: true,
+			//	target: '_blank'
+			//}
 		]
 	}
 ]
@@ -111,7 +111,7 @@ async function getStoreData() {
 }
 </script>
 
-<footer class="w-full justify-center bg-gray-50 p-3 text-sm sm:p-10">
+<footer class="w-full justify-center bg-gray-50 p-3 text-sm sm:p-10" dir="rtl">
 	<div class="container mx-auto max-w-6xl">
 		<div
 			class="mb-4 flex w-full flex-col flex-wrap items-start justify-start gap-5 sm:mb-8 sm:max-h-[30rem] sm:gap-10 lg:max-h-96 xl:max-h-60">
@@ -134,7 +134,7 @@ async function getStoreData() {
 								{#if item.new}
 									<div
 										class="ml-2 max-w-max rounded bg-primary-500 py-[0.1rem] px-1 text-[0.5rem] font-semibold leading-3 tracking-wider text-white">
-										NEW
+										חדש
 									</div>
 								{/if}
 							</li>
@@ -145,7 +145,7 @@ async function getStoreData() {
 
 			{#if megamenu}
 				<div>
-					<h5 class="mb-4 whitespace-nowrap font-semibold uppercase">Collections</h5>
+					<h5 class="mb-4 whitespace-nowrap font-semibold uppercase">קטגוריות</h5>
 
 					<ul class="flex flex-col gap-1 text-gray-500">
 						{#each megamenu as category}
@@ -160,7 +160,7 @@ async function getStoreData() {
 								{#if category.new}
 									<div
 										class="ml-2 max-w-max rounded bg-primary-500 py-[0.1rem] px-1 text-[0.5rem] font-semibold leading-3 tracking-wider text-white">
-										NEW
+										חדש
 									</div>
 								{/if}
 							</li>
@@ -170,7 +170,7 @@ async function getStoreData() {
 			{/if}
 
 			<div>
-				<h5 class="mb-4 whitespace-nowrap font-semibold uppercase">Contact Us</h5>
+				<h5 class="mb-4 whitespace-nowrap font-semibold uppercase">יצירת קשר</h5>
 
 				<ul class="flex flex-col gap-2 text-gray-500">
 					{#if $page.data.store?.email}
@@ -214,7 +214,7 @@ async function getStoreData() {
 									></path>
 								</svg>
 
-								<span>Phone</span>
+								<span>פלאפון</span>
 							</h6>
 
 							<a href="tel:+{$page.data.store?.phone}"> {$page.data.store?.phone} </a>
@@ -234,10 +234,10 @@ async function getStoreData() {
 								></path>
 							</svg>
 
-							<span>Guaranteed Response Time</span>
+							<span>מענה בתוך:</span>
 						</h6>
 
-						<p>Within 24 Hours</p>
+						<p> 48 שעות</p>
 					</li>
 
 					<li class="max-w-max">
@@ -255,15 +255,17 @@ async function getStoreData() {
 									d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 							</svg>
 
-							<span>Working Days/Hours</span>
+							<span>שעות פעילות</span>
 						</h6>
 
-						<p>Mon – Sat / 7AM – 9PM</p>
+						<p>ראשון – חמישי 
+							/
+							 10:00 – 20:00</p>
 					</li>
 				</ul>
 			</div>
 
-			<div>
+		<!----	<div>
 				<h5 class="mb-4 whitespace-nowrap font-semibold uppercase">
 					Experience {$page.data.store?.websiteName} app on mobile
 				</h5>
@@ -286,10 +288,10 @@ async function getStoreData() {
 					</a>
 				</div>
 			</div>
-
+		-->
 			{#if $page.data.store?.facebookPage || $page.data.store?.instagramPage || $page.data.store?.twitterPage || $page.data.store?.email || $page.data.store?.linkedinPage || $page.data.store?.pinterestPage || $page.data.store?.youtubeChannel}
 				<div>
-					<h5 class="mb-4 whitespace-nowrap font-semibold uppercase">Keep in touch</h5>
+					<h5 class="mb-4 whitespace-nowrap font-semibold uppercase">הישארו בקשר</h5>
 
 					<ul class="flex flex-wrap gap-4 text-gray-500">
 						<!-- Facebook -->
@@ -488,7 +490,7 @@ async function getStoreData() {
 		{#if popularSearches?.count > 0}
 			<div class="mb-4 sm:mb-8">
 				<h2 class="mb-4 flex items-center gap-4 font-semibold">
-					<span class="flex-1 whitespace-nowrap uppercase"> Popular searches </span>
+					<span class="flex-1 whitespace-nowrap uppercase"> חיפושים פופולאריים </span>
 
 					<hr class="w-full border-t" />
 				</h2>
@@ -516,7 +518,7 @@ async function getStoreData() {
 			<hr class="mb-4 w-full border-t sm:mb-8" />
 
 			<div class="mb-4 sm:mb-8">
-				<h2 class="mb-4 whitespace-nowrap font-semibold uppercase">Registered Office Address</h2>
+				<h2 class="mb-4 whitespace-nowrap font-semibold uppercase">כתובתינו:</h2>
 
 				<p class="text-gray-500">
 					{@html $page.data.store?.address}
@@ -528,21 +530,21 @@ async function getStoreData() {
 
 		<div
 			class="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-500 sm:gap-5 md:justify-between">
-			<p>Copyright {getYear()} © {$page.data.store?.websiteName} made with ❤️ in India</p>
+			<p>Copyright {getYear()} © {$page.data.store?.websiteName} made with ❤️ in Israel</p>
 
 			<div class="flex items-center justify-center gap-4">
 				<a
 					href="/contact-us"
 					aria-label="Click to route this page"
 					class="font-bold uppercase text-primary-500 transition duration-300 hover:text-primary-700">
-					Contact Us
+					טופס יצירת קשר
 				</a>
 
 				<a
 					href="/faqs"
 					aria-label="Click to route this page"
 					class="font-bold uppercase text-primary-500 transition duration-300 hover:text-primary-700">
-					Faqs
+					שאלות ותשובות
 				</a>
 			</div>
 		</div>

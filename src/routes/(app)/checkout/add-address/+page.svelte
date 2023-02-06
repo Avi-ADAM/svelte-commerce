@@ -14,7 +14,7 @@ import Textbox from '$lib/ui/Textbox.svelte'
 
 export let data
 
-// console.log('zzzzzzzzzzzzzzzzzz', data)
+ console.log('zzzzzzzzzzzzzzzzzz', data)
 
 let err
 let loading = false
@@ -86,13 +86,13 @@ async function save(ads) {
 <SEO {...seoProps} />
 
 {#if data.ads}
-	<div class="container mx-auto min-h-screen max-w-4xl p-3 py-5 sm:p-10">
+	<div class="container mx-auto min-h-screen max-w-4xl p-3 py-5 sm:p-10" dir="rtl">
 		<div class="flex items-center justify-between gap-5">
 			<h2 class="mb-5 text-xl font-bold capitalize tracking-wide sm:text-2xl">
 				{#if data.ads.id === 'new'}
-					Add New Address
+					הוספת כתובת חדשה
 				{:else}
-					Edit Address
+					 עריכת כתובת
 				{/if}
 			</h2>
 
@@ -109,56 +109,57 @@ async function save(ads) {
 					<Textbox
 						type="text"
 						bind:value="{data.ads.firstName}"
-						placeholder="Enter First Name"
+						placeholder="שם פרטי"
 						required />
 				</div>
 
 				<div>
-					<h6 class="mb-2 font-semibold">Last Name</h6>
+					<h6 class="mb-2 font-semibold">שם משפחה</h6>
 
-					<Textbox type="text" bind:value="{data.ads.lastName}" placeholder="Enter Last Name" />
+					<Textbox type="text" bind:value="{data.ads.lastName}" placeholder="שם משפחה" />
 				</div>
 
 				<div>
-					<h6 class="mb-2 font-semibold">Email</h6>
+					<h6 class="mb-2 font-semibold">כתובת מייל</h6>
 
-					<Textbox type="text" bind:value="{data.ads.email}" placeholder="Enter Email" />
+					<Textbox type="text" bind:value="{data.ads.email}" placeholder="כתובת אימייל" />
 				</div>
 
 				<div>
-					<h6 class="mb-2 font-semibold">Mobile number <span class="text-red-500">*</span></h6>
+					<h6 class="mb-2 font-semibold">מספר טלפון<span class="text-red-500">*</span></h6>
 
 					<Textbox
 						type="text"
 						maxlength="10"
 						bind:value="{data.ads.phone}"
-						placeholder="Enter Phone No" />
+						placeholder="מספר טלפון" />
 				</div>
 
 				<div>
 					<h6 class="mb-2 font-semibold">
-						Address (Area and Street) <span class="text-red-500">*</span>
+						כתובת (רחוב, מספר בית ומספר דירה) <span class="text-red-500">*</span>
 					</h6>
 
 					<Textbox
 						type="text"
 						bind:value="{data.ads.address}"
-						placeholder="Enter Address"
+						placeholder="כתובת למשלוח"
 						required />
 				</div>
 
-				<div>
+				<!----<div>
 					<h6 class="mb-2 font-semibold">Landmark</h6>
 
 					<Textbox type="text" bind:value="{data.ads.locality}" placeholder="Enter Landmark" />
-				</div>
+				</div>-->
 
 				<div>
-					<h6 class="mb-2 font-semibold">City/District/Town <span class="text-red-500">*</span></h6>
+					<h6 class="mb-2 font-semibold">עיר<span class="text-red-500">*</span></h6>
 
 					<Textbox type="text" bind:value="{data.ads.city}" placeholder="Enter City" required />
 				</div>
-
+<!----
+	Todo molti select city
 				{#if data.ads.country}
 					<div>
 						<h6 class="mb-2 font-semibold">State <span class="text-red-500">*</span></h6>
@@ -201,20 +202,20 @@ async function save(ads) {
 						</select>
 					{/if}
 				</div>
-
+			-->
 				<div>
-					<h6 class="mb-2 font-semibold">Pincode / Zip <span class="text-red-500">*</span></h6>
+					<h6 class="mb-2 font-semibold">מיקוד<span class="text-red-500">*</span></h6>
 
 					<Textbox
 						type="text"
 						bind:value="{data.ads.zip}"
-						placeholder="Enter Pincode / Zip"
+						placeholder="מיקוד"
 						required />
 				</div>
 			</div>
 
 			<div class="mt-5 flex justify-end sm:mt-10">
-				<PrimaryButton type="submit" loading="{loading}" class="px-10">SAVE ADDRESS</PrimaryButton>
+				<PrimaryButton type="submit" loading="{loading}" class="px-10">שמירה</PrimaryButton>
 			</div>
 		</form>
 	</div>

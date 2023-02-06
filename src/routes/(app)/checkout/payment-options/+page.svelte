@@ -264,11 +264,10 @@ function checkIfStripeCardValid({ detail }) {
 							></path>
 						</svg>
 
-						<p class="mb-2 font-bold capitalize">We are very sorry!!</p>
+						<p class="mb-2 font-bold capitalize"> תשלום טלפוני בלבד</p>
 
 						<p class="text-sm text-gray-500">
-							There's no payment methode is available. If you are an admin, then add a payment
-							methode as fast as possible
+							יש להשאיר מספר טלפון ונחזור אליכם לביצוע תשלום
 						</p>
 					</div>
 				</div>
@@ -282,14 +281,14 @@ function checkIfStripeCardValid({ detail }) {
 		</div>
 
 		<div class="w-full md:w-80 md:flex-shrink-0 md:flex-grow-0">
-			<h2 class="text-xl font-bold capitalize tracking-wide sm:text-2xl">Cart Summary</h2>
+			<h2 class="text-xl font-bold capitalize tracking-wide sm:text-2xl">סיכום הזמנה</h2>
 			{#if data.address}
 				<div class="mt-5 border-t pt-5">
-					<h5 class="mb-2 text-xl font-bold capitalize tracking-wide">Delivery Address</h5>
+					<h5 class="mb-2 text-xl font-bold capitalize tracking-wide">כתובת למשלוח</h5>
 
 					<div class="text-sm font-light">
 						<div class="my-1 flex flex-row">
-							<h5 class="mr-2 w-20 flex-shrink-0 font-semibold tracking-wide">Name</h5>
+							<h5 class="mr-2 w-20 flex-shrink-0 font-semibold tracking-wide">שם</h5>
 
 							<p>
 								{data.address.firstName}
@@ -298,7 +297,7 @@ function checkIfStripeCardValid({ detail }) {
 						</div>
 
 						<div class="flex flex-row">
-							<h5 class="mr-2 w-20 flex-shrink-0 font-semibold tracking-wide">Address</h5>
+							<h5 class="mr-2 w-20 flex-shrink-0 font-semibold tracking-wide">כתובת</h5>
 
 							<p class="flex flex-wrap items-center">
 								{#if data.address.address}
@@ -312,31 +311,31 @@ function checkIfStripeCardValid({ detail }) {
 								{#if data.address.city}
 									, {data.address.city}
 								{/if}
-
+<!----
 								{#if data.address.state}
 									, {data.address.state}
 								{/if}
 
 								{#if data.address.country}
 									, {data.address.country}
-								{/if}
+								{/if}-->
 							</p>
 						</div>
 
 						<div class="my-1 flex flex-row">
-							<h5 class="mr-2 w-20 flex-shrink-0 font-semibold tracking-wide">Pin</h5>
+							<h5 class="mr-2 w-20 flex-shrink-0 font-semibold tracking-wide">מיקוד</h5>
 
 							<h6>{data.address.zip}</h6>
 						</div>
 
 						<div class="my-1 flex flex-row">
-							<h5 class="mr-2 w-20 flex-shrink-0 font-semibold tracking-wide">Phone</h5>
+							<h5 class="mr-2 w-20 flex-shrink-0 font-semibold tracking-wide">טלפון</h5>
 
 							<h6>{data.address.phone}</h6>
 						</div>
 
 						<div class="my-1 flex flex-row flex-wrap">
-							<h5 class="mr-2 w-20 flex-shrink-0 font-semibold tracking-wide">Email</h5>
+							<h5 class="mr-2 w-20 flex-shrink-0 font-semibold tracking-wide">מייל</h5>
 
 							<h6>{data.address.email}</h6>
 						</div>
@@ -398,6 +397,6 @@ function checkIfStripeCardValid({ detail }) {
 {#if loading}
 	<div
 		class="fixed inset-0 z-[100] flex h-screen w-screen items-center justify-center gap-5 bg-black bg-opacity-75 p-5 text-center text-white sm:p-10">
-		Please wait... your payment is currently being processed
+		נא להמתין... פרטי הרכישה נבדקים
 	</div>
 {/if}

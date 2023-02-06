@@ -159,9 +159,9 @@ async function getCoupons() {
 								{data.cart?.qty || ''}
 
 								{#if data.cart?.qty > 1}
-									Items
+									פריטים
 								{:else}
-									Item
+									פריט
 								{/if}
 							</h4>
 						</div>
@@ -184,9 +184,9 @@ async function getCoupons() {
 										</svg>
 
 										<div class="flex-1">
-											<h6 class="text-lg font-semibold">Out of Stock</h6>
+											<h6 class="text-lg font-semibold">לא במלאי</h6>
 
-											<p>Please remove from bag, items will be added to wishlist</p>
+											<p>בבקשה להסיר מהעגלה הפריטים יתווספו לרשימת המשאלות</p>
 										</div>
 									</div>
 
@@ -249,7 +249,7 @@ async function getCoupons() {
 									</div>
 								</div>
 
-								<PrimaryButton class="w-full">Move to Wishlist</PrimaryButton>
+								<PrimaryButton class="w-full">הוספה לרשימת המשאלות</PrimaryButton>
 							</div>
 						{/if}
 
@@ -446,7 +446,7 @@ async function getCoupons() {
 					{#if data.cart?.discount?.amount > 0}
 						<div class="mt-3 flex w-full items-center justify-between text-sm">
 							<h5 class="flex-1 truncate text-left font-semibold">
-								Applied Coupon "{data.cart?.discount?.code}"
+								קופונים בשימוש "{data.cart?.discount?.code}"
 							</h5>
 
 							<button
@@ -456,7 +456,7 @@ async function getCoupons() {
 								{#if loadingRemoveCoupon}
 									<span class="text-center text-gray-500"> ... </span>
 								{:else}
-									<span class="text-right hover:underline"> Remove </span>
+									<span class="text-right hover:underline"> הסרה </span>
 								{/if}
 							</button>
 						</div>
@@ -466,7 +466,7 @@ async function getCoupons() {
 							class="mt-3 flex w-full items-center justify-between focus:outline-none hover:text-primary-500"
 							class:text-primary-500="{openApplyPromoCodeModal}"
 							on:click="{() => (openApplyPromoCodeModal = true)}">
-							<h5 class="text-sm font-semibold">Apply Promo Code</h5>
+							<h5 class="text-sm font-semibold">הוספת קוד קופון</h5>
 
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -501,7 +501,7 @@ async function getCoupons() {
 							<div class="relative w-full sm:w-[25rem]">
 								<div
 									class="flex items-center justify-between gap-5 border-b border-gray-300 p-4 sm:gap-10">
-									<h2 class="text-lg font-bold">Apply Promo Code</h2>
+									<h2 class="text-lg font-bold">הוספת קוד קופון</h2>
 
 									<button
 										type="button"
@@ -590,7 +590,7 @@ async function getCoupons() {
 															{/if}
 
 															{#if coupon.validTo}
-																<span><b>Expires on : {date(coupon.validTo)}</b></span>
+																<span><b>תקף עד : {date(coupon.validTo)}</b></span>
 															{/if}
 														</div>
 													{/if}
@@ -599,7 +599,7 @@ async function getCoupons() {
 										</ul>
 									{:else}
 										<div class="p-5 text-center text-sm text-gray-500">
-											Opps! No coupon available right now<br /> Try again later.
+											אין קופון שזמין עכשיו<br />  יש לנסות שוב מאוחר יותר
 										</div>
 									{/if}
 								</div>
@@ -619,7 +619,7 @@ async function getCoupons() {
 				<div class="w-full">
 					<h2
 						class="my-5 font-serif text-xl font-medium tracking-wider sm:my-10 sm:text-2xl md:text-3xl xl:text-4xl">
-						You May Like
+					מוצרים שאולי יתאימו לך
 					</h2>
 
 					<div
@@ -638,14 +638,14 @@ async function getCoupons() {
 					<img src="{noAddToCartAnimate}" alt="empty listing" class="mb-5 h-60 object-contain" />
 				</div>
 
-				<span class="mb-3 text-xl font-medium md:text-3xl">Empty Cart!!</span>
+				<span class="mb-3 text-xl font-medium md:text-3xl"> העגלה ריקה!!</span>
 
 				<span class="mb-5 text-xs">
-					We didn't find any item inside cart, Go ahead, order some essentials from the menu
+					אין פריטים בעגלה, ממליצים לחפש ולהוסיף כמה פריטים שווים
 				</span>
 
 				<PrimaryButton class="w-40 py-2 text-sm" on:click="{() => goto(`/`)}">
-					BROWSE ITEMS
+					המוצרים שלנו
 				</PrimaryButton>
 			</div>
 		{/if}

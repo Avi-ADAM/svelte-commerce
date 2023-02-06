@@ -13,6 +13,8 @@ export const fetchFooterCategories = async ({
 }: any) => {
 	try {
 		let data: []
+	console.log(provider,`categories?store=${storeId}&megamenu=true&limit=6&page=0&level=0`)
+
 		switch (provider) {
 			case 'litekart':
 				if (server) {
@@ -20,11 +22,14 @@ export const fetchFooterCategories = async ({
 						`categories?store=${storeId}&megamenu=true&limit=6&page=0&level=0`,
 						sid
 					)
+					console.log(`categories?store=${storeId}&megamenu=true&limit=6&page=0&level=0`,data)
+
 				} else {
 					data = await getAPI(
 						`categories?store=${storeId}&megamenu=true&limit=6&page=0&level=0`,
 						origin
 					)
+					console.log(`categories?store=${storeId}&megamenu=true&limit=6&page=0&level=0`,data)
 				}
 				// must return link:string, slug:string(optional) name:string, new:boolean
 				break

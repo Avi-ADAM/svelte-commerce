@@ -15,6 +15,8 @@
 </style>
 
 <script>
+// @ts-nocheck
+
 import { createEventDispatcher } from 'svelte'
 import { toast } from './utils'
 

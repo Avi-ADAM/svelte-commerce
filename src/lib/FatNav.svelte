@@ -298,7 +298,7 @@ async function onSearchSubmit({ detail }) {
 												loadingringsize="xs"
 												clickEffect
 												on:click="{() => (showCartSidebar = false)}">
-												Checkout
+												סיום הזמנה ותשלום
 											</PrimaryButton>
 										</a>
 									</div>
@@ -311,11 +311,10 @@ async function onSearchSubmit({ detail }) {
 												class="mb-5 h-40 object-contain" />
 										</div>
 
-										<span class="mb-3 text-xl font-medium md:text-3xl">Empty Cart!!</span>
+										<span class="mb-3 text-xl font-medium md:text-3xl">העגלה ריקה!!</span>
 
 										<span class="text-xs">
-											We didn't find any item inside cart, Go ahead, order some essentials from the
-											menu
+											אין פריטים בעגלה, אנו ממליצים להשתמש בחיפוש ולהוסיף כמה
 										</span>
 									</div>
 								{/if}
@@ -325,7 +324,7 @@ async function onSearchSubmit({ detail }) {
 										class="mb-5 flex items-center gap-2 whitespace-nowrap text-center font-bold uppercase sm:text-lg">
 										<hr class="w-full" />
 
-										<span>Our Categories</span>
+										<span>הקטגוריות שלנו</span>
 
 										<hr class="w-full" />
 									</div>
@@ -349,7 +348,7 @@ async function onSearchSubmit({ detail }) {
 					</div>
 				</div>
 			{/if}
-
+<!----
 			{#if me?.active}
 				<div
 					class="relative hidden lg:block"
@@ -447,9 +446,9 @@ async function onSearchSubmit({ detail }) {
 						</ul>
 					{/if}
 				</div>
-
+			-->
 				<!-- Menu -->
-
+<!----
 				<button
 					aria-label="Sidebar"
 					type="button"
@@ -468,9 +467,9 @@ async function onSearchSubmit({ detail }) {
 							d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
 					</svg>
 				</button>
-			{:else}
+			{:else}-->
 				<!-- Login -->
-
+<!----
 				<a
 					href="{$page.data?.loginUrl || '/auth/login'}?ref={$page?.url?.pathname}{$page?.url
 						?.search}"
@@ -498,7 +497,7 @@ async function onSearchSubmit({ detail }) {
 						</span>
 					</button>
 				</a>
-			{/if}
+			{/if}-->
 		</div>
 	</div>
 
@@ -541,11 +540,11 @@ async function onSearchSubmit({ detail }) {
 						clip-rule="evenodd"></path>
 				</svg>
 			</button>
-
+<!----
 			{#if me?.active}
-				<ul class="text-gray-600">
+				<ul class="text-gray-600">-->
 					<!-- Profile Preview -->
-
+<!----
 					<li>
 						<a
 							data-sveltekit-preload-data
@@ -587,7 +586,7 @@ async function onSearchSubmit({ detail }) {
 							</div>
 						</a>
 					</li>
-
+				-->
 					<!-- Menu -->
 
 					{#each menu as m}
@@ -606,7 +605,7 @@ async function onSearchSubmit({ detail }) {
 					{/each}
 
 					<!-- Log Out -->
-
+<!----
 					<li>
 						<form action="/auth/logout" method="POST" use:enhance>
 							<button type="submit" aria-label="Logout" class="flex w-full items-center gap-2 py-2">
@@ -630,9 +629,9 @@ async function onSearchSubmit({ detail }) {
 						</form>
 					</li>
 				</ul>
-			{:else}
+			{:else}-->
 				<!-- Login -->
-
+<!----
 				<a
 					data-sveltekit-preload-data
 					href="{$page.data?.loginUrl || '/auth/login'}?ref={$page?.url?.pathname}{$page?.url
@@ -657,7 +656,7 @@ async function onSearchSubmit({ detail }) {
 
 					<span>Login</span>
 				</a>
-			{/if}
+			{/if}-->
 		</div>
 	</aside>
 {/if}

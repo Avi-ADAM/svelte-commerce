@@ -67,7 +67,7 @@ async function refreshData() {
 	<title>{data.category?.name}</title>
 </svelte:head>
 
-<div>
+<div dir="rtl">
 	<div class="mb-20 flex min-h-screen w-full flex-col gap-5 lg:flex-row lg:gap-10 lg:px-10">
 		{#if facets}
 			<DesktopFilter
@@ -116,7 +116,7 @@ async function refreshData() {
 					<div class="flex items-center justify-center" style="height: 60vh;">
 						<div class="m-10 flex flex-col items-center justify-center text-center">
 							<h1 class="mb-10 text-xl capitalize sm:text-2xl lg:text-3xl">
-								Oops!!, No result found {#if data.category?.name} for "{data.category?.name}"{/if}
+						אבוי! לא נמצאו תוצאות   {#if data.category?.name} עבור "{data.category?.name}"{/if}
 							</h1>
 
 							<div class="mb-5">
@@ -128,10 +128,10 @@ async function refreshData() {
 									class="h-20 w-20 text-xs" />
 							</div>
 
-							<p class="mb-5 text-center text-gray-500">No data found</p>
+							<p class="mb-5 text-center text-gray-500">לא נמצאו תוצאות</p>
 
 							<PrimaryButton class="text-sm" on:click="{() => goto('/')}">
-								Back to Home
+								חזרה לדף הבית
 							</PrimaryButton>
 						</div>
 					</div>

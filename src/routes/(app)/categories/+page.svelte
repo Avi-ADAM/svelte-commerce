@@ -76,7 +76,7 @@ function toggle2(cx) {
 
 <SEO {...seoProps} />
 
-<div>
+<div dir="rtl">
 	<div class="mb-20 bg-white">
 		<!-- 1st level categories -->
 

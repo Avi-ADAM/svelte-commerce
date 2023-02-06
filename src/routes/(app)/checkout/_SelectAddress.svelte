@@ -13,7 +13,7 @@ let removing = false,
 	err
 
 async function remove(id) {
-	if (confirm('Are you sure to delete?')) {
+	if (confirm('האם להסיר? פעולה זו אינה הפיכה')) {
 		try {
 			removing = true
 			await del(`addresses/${id}?store=${$page.data.store?.id}`, $page.data.origin)
@@ -36,7 +36,7 @@ async function addressChanged(id) {
 {#if loading}
 	<AddressSkeleton />
 {:else if address}
-	<div class="border-b p-4 sm:p-6">
+	<div class="border-b p-4 sm:p-6" dir="rtl">
 		<label class="flex w-full cursor-pointer flex-row gap-2 sm:gap-4">
 			<input
 				bind:group="{selectedAddress}"
@@ -53,7 +53,7 @@ async function addressChanged(id) {
 				</h5>
 
 				<div class="flex flex-wrap items-start text-sm md:flex-nowrap">
-					<h5 class="w-20 font-semibold">Address</h5>
+					<h5 class="w-20 font-semibold">כתובת</h5>
 
 					<p class="flex flex-1 flex-wrap items-center">
 						:
@@ -66,17 +66,17 @@ async function addressChanged(id) {
 						{#if address.city}
 							, {address.city}
 						{/if}
-						{#if address.state}
+					<!----	{#if address.state}
 							, {address.state}
 						{/if}
 						{#if address.country}
 							, {address.country}
-						{/if}
+						{/if}-->
 					</p>
 				</div>
 
 				<div class="flex flex-wrap items-start text-sm md:flex-nowrap">
-					<h5 class="w-20 font-semibold">Pin Code</h5>
+					<h5 class="w-20 font-semibold">מיקוד</h5>
 
 					<p class="flex flex-1 flex-col">
 						: {address.zip}
@@ -84,7 +84,7 @@ async function addressChanged(id) {
 				</div>
 
 				<div class="flex flex-wrap items-start text-sm md:flex-nowrap">
-					<h5 class="w-20 font-semibold">Phone</h5>
+					<h5 class="w-20 font-semibold">טלפון</h5>
 
 					<p class="flex flex-1 flex-col">
 						: {address.phone}
@@ -92,7 +92,7 @@ async function addressChanged(id) {
 				</div>
 
 				<div class="flex flex-wrap items-start text-sm md:flex-nowrap">
-					<h5 class="w-20 font-semibold">Email</h5>
+					<h5 class="w-20 font-semibold">מייל</h5>
 
 					<p class="flex flex-1 flex-col">
 						: {address.email}
@@ -106,7 +106,7 @@ async function addressChanged(id) {
 				type="button"
 				class="w-full rounded-md border border-primary-500 py-2 px-4 font-semibold tracking-wide text-primary-500 shadow-md transition duration-300 focus:outline-none hover:bg-primary-500 hover:text-white"
 				on:click="{() => goto(`/checkout/add-address?id=${address._id}`)}">
-				EDIT
+				עריכה
 			</button>
 
 			<button
@@ -136,7 +136,7 @@ async function addressChanged(id) {
 						</svg>
 					</div>
 				{:else}
-					<span>REMOVE</span>
+					<span>הסרה</span>
 				{/if}
 			</button>
 		</div>

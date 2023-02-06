@@ -36,7 +36,7 @@ let categoryColors = [
 			</div>
 		</div>
 	{:else if categories && categories.length}
-		<div class="overflow-x-auto py-5 scrollbar-none sm:px-10">
+		<div class="overflow-x-auto py-5 scrollbar-none sm:px-10" dir="rtl">
 			<div class="flex items-center pl-3">
 				{#each categories as category}
 					{#if category.img}

@@ -10,15 +10,15 @@ export const authorInfo = {
 	telegramUsername: 'itswadesh',
 	twitterUsername: 'itswadesh'
 }
-export const currency = { symbol: '₹', code: 'INR' }
+export const currency = { symbol: '₪', code: 'ILS' }
 export const adminUrl = 'https://admin.litekart.in'
 export const dimentionUnit = 'cm'
 export const loginUrl = '/auth/login'
 export const weightUnit = 'g'
-export const currencyCode = 'USD'
-export const currencySymbol = '$'
+export const currencyCode = 'ILS'
+export const currencySymbol = '₪'
 export const DOMAIN = env.PUBLIC_DOMAIN
-export const entity = 'Misiki'
+export const entity = '1lev1'
 export const HTTP_ENDPOINT = env.PUBLIC_HTTP_ENDPOINT || 'https://api.litekart.in'
 export const IMAGE_CDN_URL = 'https://ik.imagekit.io/3wzatecz51w3i'
 export const mediaqueries = {
@@ -33,18 +33,18 @@ export const mediaqueries = {
 	dark: '(prefers-color-scheme: dark)',
 	noanimations: '(prefers-reduced-motion: reduce)'
 }
-export const searchbarText = 'Search for brands categories & more'
+export const searchbarText = 'חיפוש מוצרים, מותגים וקטגוריות'
 export const siteShortTitle = 'Litekart' // used as SchemaOrg siteTitleAlt
 export const siteTitle = 'Litekart'
 export const sorts = [
-	{ name: 'Recomended', val: null },
-	{ name: `What's New`, val: '-updatedAt' },
-	{ name: 'Price: High to Low ', val: '-price' },
-	{ name: 'Price: Low to High ', val: 'price' },
-	{ name: 'Discount: High to Low ', val: '-discount' },
-	{ name: 'Discount: Low to High ', val: 'discount' },
-	{ name: `Name: Asc`, val: 'name' },
-	{ name: `Name: Desc`, val: '-name' } // { name: 'Most Viewed', val: '-views' }
+	{ name: 'מומלצים', val: null },
+	{ name: `חדשים`, val: '-updatedAt' },
+	{ name: 'מחיר: גבוה לנמוך ', val: '-price' },
+	{ name: 'מחיר: זול ליקר ', val: 'price' },
+	/*{ name: 'Discount: High to Low ', val: '-discount' },
+	{ name: 'Discount: Low to High ', val: 'discount' },*/
+	{ name: `שם: א-ת`, val: 'name' },
+	{ name: `שם: ת-א`, val: '-name' } // { name: 'Most Viewed', val: '-views' }
 ]
 export const WWW_URL = env.PUBLIC_WWW_URL
 export const listOfPagesWithoutBackButton = [
@@ -88,6 +88,6 @@ export const woocommerceHeaders = {
 	Accept: 'application/json'
 }
 export const provider: string = 'litekart'
-// export const provider: string = 'medusajs'
+//export const provider: string = 'strapi-graphql'
 // export const provider: string = 'woocommerce'
 // export const provider: string = 'bigcommerce'

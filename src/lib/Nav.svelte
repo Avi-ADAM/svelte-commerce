@@ -14,7 +14,7 @@ import { page } from '$app/stores'
 import Autocomplete from '$lib/components/Autocomplete/Autocomplete.svelte'
 import LazyImg from './components/Image/LazyImg.svelte'
 import MegaMenu from './components/MegaMenu.svelte'
-import menu from '$lib/config/menu'
+//import menu from '$lib/config/menu'
 import PrimaryButton from './ui/PrimaryButton.svelte'
 import WhiteButton from './ui/WhiteButton.svelte'
 import AutosuggestModal from './AutosuggestModal.svelte'
@@ -64,6 +64,7 @@ async function onSearchSubmit({ detail }) {
 </script>
 
 <nav
+	dir="rtl"
 	class="minimum-width-rem fixed inset-x-0 top-0 flex h-14 w-full items-center justify-center border-b bg-white px-3 shadow-md sm:h-20 sm:px-10
 	{showCartSidebar ? 'z-50 ' : 'z-40 delay-500'}">
 	<div class="flex w-full items-center justify-between gap-4 lg:gap-8">
@@ -292,7 +293,7 @@ async function onSearchSubmit({ detail }) {
 												class="w-full text-xs uppercase"
 												loadingringsize="xs"
 												on:click="{() => (showCartSidebar = false)}">
-												View Cart
+												הצגת עגלת הקניות
 											</WhiteButton>
 										</a>
 
@@ -303,7 +304,7 @@ async function onSearchSubmit({ detail }) {
 												loadingringsize="xs"
 												clickEffect
 												on:click="{() => (showCartSidebar = false)}">
-												Checkout
+												סיום הזמנה ותשלום
 											</PrimaryButton>
 										</a>
 									</div>
@@ -316,11 +317,10 @@ async function onSearchSubmit({ detail }) {
 												class="mb-5 h-40 object-contain" />
 										</div>
 
-										<span class="mb-3 text-xl font-medium md:text-3xl">Empty Cart!!</span>
+										<span class="mb-3 text-xl font-medium md:text-3xl">העגלה ריקה!!</span>
 
 										<span class="text-xs">
-											We didn't find any item inside cart, Go ahead, order some essentials from the
-											menu
+											ממליצים בחום לחפש באתר, בטוח תמצאו כמה דברים שווים
 										</span>
 									</div>
 								{/if}
@@ -330,7 +330,7 @@ async function onSearchSubmit({ detail }) {
 										class="mb-5 flex items-center gap-2 whitespace-nowrap text-center font-bold uppercase sm:text-lg">
 										<hr class="w-full" />
 
-										<span>Our Categories</span>
+										<span>הקטגוריות שלנו</span>
 
 										<hr class="w-full" />
 									</div>
@@ -354,7 +354,7 @@ async function onSearchSubmit({ detail }) {
 					</div>
 				</div>
 			{/if}
-
+<!--
 			{#if me?.active}
 				<div
 					class="relative hidden lg:block"
@@ -452,9 +452,9 @@ async function onSearchSubmit({ detail }) {
 						</ul>
 					{/if}
 				</div>
-
+			-->
 				<!-- Menu -->
-
+<!---
 				<button
 					aria-label="Sidebar"
 					type="button"
@@ -472,10 +472,10 @@ async function onSearchSubmit({ detail }) {
 							stroke-linejoin="round"
 							d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
 					</svg>
-				</button>
+				</button>-
 			{:else}
-				<!-- Login -->
-
+				--><!-- Login -->
+<!----
 				<a
 					href="{$page.data?.loginUrl || '/auth/login'}?ref={$page?.url?.pathname}{$page?.url
 						?.search}"
@@ -503,7 +503,7 @@ async function onSearchSubmit({ detail }) {
 						</span>
 					</button>
 				</a>
-			{/if}
+			{/if}-->
 		</div>
 	</div>
 </nav>
@@ -544,11 +544,11 @@ async function onSearchSubmit({ detail }) {
 						clip-rule="evenodd"></path>
 				</svg>
 			</button>
-
+<!----
 			{#if me?.active}
 				<ul class="text-gray-600">
-					<!-- Profile Preview -->
-
+				--><!-- Profile Preview -->
+<!---
 					<li>
 						<a
 							data-sveltekit-preload-data
@@ -590,9 +590,9 @@ async function onSearchSubmit({ detail }) {
 							</div>
 						</a>
 					</li>
-
+				-->
 					<!-- Menu -->
-
+<!---
 					{#each menu as m}
 						<li>
 							<a
@@ -607,9 +607,9 @@ async function onSearchSubmit({ detail }) {
 							</a>
 						</li>
 					{/each}
-
+					-->
 					<!-- Log Out -->
-
+<!----
 					<li>
 						<form action="/auth/logout" method="POST" use:enhance>
 							<button type="submit" aria-label="Logout" class="flex w-full items-center gap-2 py-2">
@@ -633,9 +633,9 @@ async function onSearchSubmit({ detail }) {
 						</form>
 					</li>
 				</ul>
-			{:else}
+			{:else}-->
 				<!-- Login -->
-
+<!----
 				<a
 					data-sveltekit-preload-data
 					href="{$page.data?.loginUrl || '/auth/login'}?ref={$page?.url?.pathname}{$page?.url
@@ -660,7 +660,7 @@ async function onSearchSubmit({ detail }) {
 
 					<span>Login</span>
 				</a>
-			{/if}
+			{/if}-->
 		</div>
 	</aside>
 {/if}

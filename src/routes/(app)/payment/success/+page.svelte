@@ -86,7 +86,7 @@ onMount(async () => {
 <SEO {...seoProps} />
 
 {#if data.order}
-	<div class="min-h-screen w-full  px-3 py-5 sm:p-10 ">
+	<div class="min-h-screen w-full  px-3 py-5 sm:p-10 " dir="rtl">
 		<div class="container mx-auto max-w-6xl">
 			<div>
 				<div class="mb-5 sm:mb-10">
@@ -100,22 +100,21 @@ onMount(async () => {
 				{#if data.order}
 					<h2 class="mb-2 text-center text-2xl font-bold sm:text-3xl">
 						{#if data.order?.seatsBooked}
-							Thank You For Your Booking!!
+							תודה רבה!
 						{:else}
-							Thank You For Your Purchase!!
+							תודה רבה על הזמנתך
 						{/if}
 					</h2>
 				{/if}
 
 				<p class="mb-5 text-center text-sm">
-					A confirmation e-mail will be sent to the e-mail address that you specified in Order
-					details.
+					מייל אישור נשלח לכתובת המייל שציינת
 				</p>
 
 				<ul class="mx-auto mb-5 flex max-w-max flex-col gap-2 sm:mb-10">
 					<li class="flex items-start gap-2 text-sm">
 						<h6 class="flex w-36 flex-shrink-0 items-center justify-between gap-1">
-							<span>Order No</span> <span>:</span>
+							<span>מספר הזמנה</span> <span>:</span>
 						</h6>
 
 						<b>
@@ -125,7 +124,7 @@ onMount(async () => {
 
 					<li class="flex items-start gap-2 text-sm">
 						<h6 class="flex w-36 flex-shrink-0 items-center justify-between gap-1">
-							<span>Order placed on</span> <span>:</span>
+							<span>הוזמן בתאריך</span> <span>:</span>
 						</h6>
 
 						<b>
@@ -135,7 +134,7 @@ onMount(async () => {
 
 					<li class="flex items-start gap-2 text-sm">
 						<h6 class="flex w-36 flex-shrink-0 items-center justify-between gap-1">
-							<span>Payment Status</span> <span>:</span>
+							<span>סטטוס תשלום</span> <span>:</span>
 						</h6>
 
 						<spn class="uppercase" class:text-green-500="{data.order?.paymentStatus === 'paid'}">
@@ -147,7 +146,7 @@ onMount(async () => {
 
 					<li class="flex items-start gap-2 text-sm">
 						<h6 class="flex w-36 flex-shrink-0 items-center justify-between gap-1">
-							<span>Payment Mode</span> <span>:</span>
+							<span>שיטת תשלום</span> <span>:</span>
 						</h6>
 
 						<spn class="uppercase">
@@ -160,7 +159,7 @@ onMount(async () => {
 					{#if data.order?.paymentGateway}
 						<li class="flex items-start gap-2 text-sm">
 							<h6 class="flex w-36 flex-shrink-0 items-center justify-between gap-1">
-								<span>Payment Gateway</span> <span>:</span>
+								<span>ספק תשלום</span> <span>:</span>
 							</h6>
 
 							<spn class="first-letter:uppercase">
@@ -178,7 +177,7 @@ onMount(async () => {
 							href="/my/orders?page=1#BusTickets"
 							rel="noopener"
 							aria-label="Click to view the booking details">
-							<PrimaryButton type="button">View Booking Details</PrimaryButton>
+							<PrimaryButton type="button">הצגת ההזמנה</PrimaryButton>
 						</a>
 					{:else}
 						<a
@@ -186,12 +185,12 @@ onMount(async () => {
 							rel="noopener"
 							aria-label="Click to view the order details"
 							data-sveltekit-preload-data>
-							<PrimaryButton type="button">View Order Details</PrimaryButton>
+							<PrimaryButton type="button"> הצגת ההזמנה</PrimaryButton>
 						</a>
 					{/if}
 
 					<a href="/" rel="noopener" aria-label="Click to route home" data-sveltekit-preload-data>
-						<WhiteButton type="button">Continue Shopping</WhiteButton>
+						<WhiteButton type="button">להמשיך ולקנות</WhiteButton>
 					</a>
 				</div>
 			</div>
@@ -203,7 +202,7 @@ onMount(async () => {
 						<div class="mb-5">
 							<h6
 								class="border-b border-dashed border-gray-400 pb-2 text-base font-bold sm:text-lg">
-								Item Details
+								פרטי המוצר
 							</h6>
 
 							<div class="itmes-start flex flex-col">
@@ -299,12 +298,12 @@ onMount(async () => {
 							</div>
 						</div>
 					{/if}
-
+<!----
 					{#if data.order?.seats?.length > 0}
 						<div class="mb-5">
 							<h6
 								class="mb-4 border-b border-dashed border-gray-400 pb-2 text-base font-semibold sm:text-lg">
-								Booking Details
+							פרטי ההזמנה
 							</h6>
 
 							<div class="itmes-start flex flex-col divide-y text-sm">
@@ -325,7 +324,7 @@ onMount(async () => {
 								{/each}
 							</div>
 						</div>
-					{/if}
+					{/if}-->
 				</div>
 
 				<div class="flex flex-col gap-4 sm:w-1/2">
@@ -333,7 +332,7 @@ onMount(async () => {
 						<div class="text-sm">
 							<h6
 								class="mb-4 border-b border-dashed border-gray-400 pb-2 text-base font-semibold sm:text-lg">
-								Shipping Information
+								פרטי המשלוח
 							</h6>
 
 							<div class="text-sm text-gray-600">
@@ -357,13 +356,13 @@ onMount(async () => {
 											{data.order?.address.city},
 										</div>
 									{/if}
-
+											<!----
 									{#if data.order?.address.country}
 										<div>
 											{data.order?.address.country}
 										</div>
 									{/if}
-
+									-->
 									{#if data.order?.address.zip}
 										<div>
 											{data.order?.address.zip}
@@ -373,7 +372,7 @@ onMount(async () => {
 
 								{#if data.order?.address.phone || data.order?.address.userPhone}
 									<div>
-										<b>Phone:</b>
+										<b>נייד:</b>
 
 										<span>{data.order?.address.phone || data.order?.userPhone}</span>
 									</div>
@@ -381,7 +380,7 @@ onMount(async () => {
 
 								{#if data.order?.address.email}
 									<div>
-										<b>Email:</b>
+										<b>מייל:</b>
 
 										<span>{data.order?.address.email}</span>
 									</div>
@@ -394,13 +393,13 @@ onMount(async () => {
 						<div class="text-sm">
 							<h6
 								class="mb-4 border-b border-dashed border-gray-400 pb-2 text-base font-semibold sm:text-lg">
-								Payment Information
+								פרטי תשלום 
 							</h6>
 
 							<div class="flex max-w-max flex-col items-start gap-2">
 								{#if data.order?.amount.subtotal}
 									<div class="flex items-center">
-										<h6 class="mr-2 w-20">Subtotal</h6>
+										<h6 class="mr-2 w-20">סך הכל</h6>
 
 										<span>: &nbsp; {currency(data.order?.amount.subtotal)} </span>
 									</div>
@@ -408,7 +407,7 @@ onMount(async () => {
 
 								{#if data.order?.amount.discount}
 									<div class="flex items-center">
-										<h6 class="mr-2 w-20">Discount</h6>
+										<h6 class="mr-2 w-20">הנחה</h6>
 
 										<span>: &nbsp; {currency(data.order?.amount.discount)} </span>
 									</div>
@@ -416,7 +415,7 @@ onMount(async () => {
 
 								{#if data.order?.amount.shipping}
 									<div class="flex items-center">
-										<h6 class="mr-2 w-20">Shipping</h6>
+										<h6 class="mr-2 w-20">משלוח</h6>
 
 										<span>: &nbsp; {currency(data.order?.amount.shipping)} </span>
 									</div>
@@ -426,7 +425,7 @@ onMount(async () => {
 									<hr class="w-full border-t border-gray-300" />
 
 									<div class="flex items-center text-base font-bold">
-										<h6 class="mr-2 w-20">Total</h6>
+										<h6 class="mr-2 w-20">סך הכל</h6>
 
 										<span>: &nbsp; {currency(data.order?.amount.total)} </span>
 									</div>

@@ -49,6 +49,7 @@ export async function postt(endpoint: string, data: any, ck?: any) {
 }
 export async function postBySid(endpoint: string, data: any, sid?: string) {
 	const ep = HTTP_ENDPOINT + '/api/' + endpoint
+	console.log(HTTP_ENDPOINT + '/api/' + endpoint,"serverts")
 	const response = await fetch(ep, {
 		method: 'POST',
 		credentials: 'include',
@@ -88,6 +89,8 @@ export async function gett(endpoint: string, ck?: any) {
 	}
 }
 export const getBySid = async (endpoint: string, sid?: any) => {
+		console.log(HTTP_ENDPOINT + '/api/' + endpoint,"serverts",sid)
+
 	const response = await fetch(HTTP_ENDPOINT + '/api/' + endpoint, {
 		method: 'GET',
 		credentials: 'include',

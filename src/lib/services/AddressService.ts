@@ -20,8 +20,11 @@ export const fetchAddresses = async ({ origin, storeId, server = false, sid = nu
 			case 'litekart':
 				if (server) {
 					res = await getBySid(`addresses/my?store=${storeId}`, sid)
+					console.log(res,"avaiaiai")
 				} else {
 					res = await getAPI(`addresses/my?store=${storeId}`, origin)
+										console.log(res,"avaiaiaino")
+
 				}
 				selectedAddress = res?.data[0]?._id
 				myAddresses = res.data || []
@@ -34,6 +37,10 @@ export const fetchAddresses = async ({ origin, storeId, server = false, sid = nu
 				myAddresses = (await getWooCommerceApi(`addresses/my`, {}, sid))?.data
 				selectedAddress = myAddresses[0]?._id
 				break
+			case 'strapi-graphql':
+				myAddresses = (await getWooCommerceApi(`addresses/my`, {}, sid))?.data
+				selectedAddress = myAddresses[0]?._id
+				break				
 		}
 		return { myAddresses: { data: myAddresses }, selectedAddress, count: res.count }
 	} catch (e) {

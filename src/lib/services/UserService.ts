@@ -14,6 +14,7 @@ import { error } from '@sveltejs/kit'
 export const fetchMeData = async ({ origin, storeId, server = false, sid = null }: any) => {
 	try {
 		let res: any = {}
+		console.log(provider,"user")
 		switch (provider) {
 			case 'litekart':
 				if (server) {

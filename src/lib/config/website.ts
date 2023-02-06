@@ -2,7 +2,7 @@ import Logo from '$lib/assets/logo.svg'
 
 // All bellow data will be replaced by Footer.svelte after the server/store call and saved to cookie
 export const id = '62b00e15c4899dc7b1f78cb1'
-export const address = `#22, Global Village, Rourkela,<br/> Odisha - 769002, India`
+export const address = `תל אביב, ישראל`
 export const closedMessage = `Sorry we're closed for the day`
 export const description = ''
 export const domain = 'litekart.in'
@@ -20,8 +20,8 @@ export const pinterestPage = 'https://www.pinterest.com/company/misiki/'
 export const stripePublishableKey =
 	'pk_test_51HXxXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXqXq'
 export const twitterPage = 'https://twitter.com/MisikiOfficial'
-export const websiteLegalName = 'Misiki Technologies LLP'
-export const websiteName = 'Litekart'
+export const websiteLegalName = ''
+export const websiteName = ''
 export const youtubeChannel = 'https://www.youtube.com/channel/UCcb3eRHh-7qAiv9ea7jmTHQ'
 // All above data will be replaced by Footer.svelte after the server/store call and saved to cookie
 
