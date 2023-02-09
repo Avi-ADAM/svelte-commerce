@@ -24,8 +24,8 @@ import { googleOneTapLoginService, loginService } from '$lib/services/UserServic
 const cookies = Cookie()
 
 const seoProps = {
-	title: 'Email Login',
-	description: 'Email Login'
+	title: 'login',
+	description: 'Login'
 }
 
 let ref = $page?.url?.searchParams.get('ref')
@@ -166,34 +166,34 @@ async function submit() {
 				href="{`/auth/forgot-password?ref=${$page.url.searchParams.get('ref') || '/'}`}"
 				aria-label="Click to route terms & conditions"
 				class="whitespace-nowrap text-xs text-gray-500 hover:underline">
-				Forgot Password
+				שכחתי סיסמה
 			</a>
 		</div>
 
-		<PrimaryButton type="submit" loading="{loading}" class="w-full">SUBMIT</PrimaryButton>
+		<PrimaryButton type="submit" loading="{loading}" class="w-full">התחברות</PrimaryButton>
 	</form>
 
 	<div class="mx-auto mb-5 flex max-w-max flex-col gap-1 text-center text-sm">
-		<a
+		<!----<a
 			href="{`/auth/otp-login?ref=${$page.url.searchParams.get('ref') || '/'}`}"
 			aria-label="Click to login with phone"
 			class="whitespace-nowrap text-primary-500 hover:text-primary-700 hover:underline">
-			Login with Phone
-		</a>
+			התחברות עם קוד לנייד
+		</a>-->
 
 		<a
 			href="{`/auth/signup?ref=${$page.url.searchParams.get('ref') || '/'}`}"
 			aria-label="Click to login with email"
 			class="whitespace-nowrap text-primary-500 hover:text-primary-700 hover:underline">
-			Signup
+			הרשמה
 		</a>
-
+<!----
 		<a
 			href="{$page.data.store?.adminUrl}?role=vendor&store={$page.data.store?.id}"
 			aria-label="Click to login as vendor"
 			class="whitespace-nowrap text-primary-500 hover:text-primary-700 hover:underline">
 			Join as Vendor
-		</a>
+		</a>-->
 	</div>
 
 	<p class="text-center text-sm text-gray-500">

@@ -12,11 +12,11 @@ export let ref = null
 // 	ref.focus()
 // })
 </script>
-
+<!----
 <form class="mb-5 flex flex-col gap-5" on:submit|preventDefault="{() => dispatch('send', phone)}">
 	<div>
 		<div class="mb-1 flex items-baseline gap-1">
-			<span class="text-sm"> +91 </span>
+			<span class="text-sm"> +972 </span>
 
 			<TextboxFloating
 				bind:this="{ref}"
@@ -28,8 +28,8 @@ export let ref = null
 				bind:value="{phone}" />
 		</div>
 
-		<p class="text-sm font-light text-gray-500">Ex. 9XXXXXXXXX</p>
+		<p class="text-sm font-light text-gray-500">Ex. 05XXXXXXXX</p>
 	</div>
 
-	<PrimaryButton loading="{loading}" class="w-full" type="submit">SEND OTP</PrimaryButton>
-</form>
+	<PrimaryButton loading="{loading}" class="w-full" type="submit">שליחת קוד</PrimaryButton>
+</form>-->

@@ -129,7 +129,7 @@ function onInput(e) {
 	// value = value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')
 }
 </script>
-
+<!----
 <div>
 	<div class="mb-5 flex flex-col items-center justify-center gap-1 text-center">
 		<div class="text-sm">Enter the OTP sent to</div>
@@ -147,7 +147,7 @@ function onInput(e) {
 	</div>
 
 	<form class="mb-8 flex flex-col text-center" on:submit|preventDefault="{handleOtp}">
-		<!-- <div class="mb-5 flex items-center justify-center gap-5"> -->
+	--><!-- <div class="mb-5 flex items-center justify-center gap-5"> -->
 		<!-- <div class="flex items-center justify-center gap-2">
 				<input
 					bind:value="{otp1}"
@@ -182,7 +182,7 @@ function onInput(e) {
 					on:keyup="{() => clickEvent('fourth', '')}" />
 			</div> -->
 		<!-- </div> -->
-
+<!----
 		<div class="otp-input-wrapper mx-auto mb-5 max-w-max">
 			<input
 				type="tel"
@@ -239,4 +239,4 @@ function onInput(e) {
 
 		<PrimaryButton loading="{loading}" class="w-full" type="submit">VERIFY</PrimaryButton>
 	</form>
-</div>
+</div>-->

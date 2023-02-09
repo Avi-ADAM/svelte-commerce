@@ -133,7 +133,7 @@ async function getCoupons() {
 
 <SEO {...seoProps} />
 
-<section class="min-h-screen w-full p-3 sm:p-10">
+<section class="min-h-screen w-full p-3 sm:p-10" dir="rtl">
 	<div class="container mx-auto max-w-6xl">
 		{#if data.loadingCart}
 			<div class="flex flex-col gap-5">
@@ -142,7 +142,7 @@ async function getCoupons() {
 				{/each}
 			</div>
 		{:else if data.cart?.qty > 0}
-			<div class="flex flex-col gap-10 lg:flex-row lg:justify-center xl:gap-20">
+			<div class="flex flex-col gap-10 lg:flex-row lg:justify-center xl:gap-20" dir="rtl">
 				<div class="w-full flex-1">
 					<div class="items-center justify-between pb-3 sm:flex">
 						<!-- Cart start  -->
@@ -150,7 +150,7 @@ async function getCoupons() {
 						<div class="mr-4 flex items-baseline">
 							<h1
 								class="font-serif text-xl font-medium tracking-wider sm:text-2xl md:text-3xl xl:text-4xl">
-								Cart
+								עגלת קניות
 							</h1>
 
 							<div class="mx-3 h-1 w-1 rounded-full bg-gray-500"></div>
@@ -186,7 +186,7 @@ async function getCoupons() {
 										<div class="flex-1">
 											<h6 class="text-lg font-semibold">לא במלאי</h6>
 
-											<p>בבקשה להסיר מהעגלה הפריטים יתווספו לרשימת המשאלות</p>
+											<p>בבקשה להסיר את הפריטים מהעגלה, הפריטים יתווספו לרשימת המשאלות שלך</p>
 										</div>
 									</div>
 
@@ -486,7 +486,7 @@ async function getCoupons() {
 					<Pricesummary
 						cart="{data.cart}"
 						nextpage="/checkout/address"
-						text="Select Address"
+						text="בחירת כתובת למשלוח"
 						showNextIcon />
 				</div>
 			</div>
@@ -535,7 +535,7 @@ async function getCoupons() {
 											loadingringsize="sm"
 											disabled="{!selectedCouponCode}"
 											class="flex-shrink-0 text-sm uppercase">
-											Check
+											בדיקת קוד 
 										</PrimaryButton>
 									</form>
 

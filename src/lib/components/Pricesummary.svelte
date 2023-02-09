@@ -9,7 +9,7 @@ const dispatch = createEventDispatcher()
 
 export let cart,
 	nextpage = null,
-	text = 'Proceed to checkout',
+	text = 'לתשלום וסיום הזמנה',
 	loading = false,
 	disabled = false,
 	hideCheckoutButton = false,
@@ -28,26 +28,26 @@ function submit() {
 {#if cart}
 	<section class="my-5 border-t  border-gray-200 py-5">
 		<h5 class="text-xl font-bold capitalize tracking-wide">
-			<span>Price Summary</span>
+			<span>סיכום ההזמנה</span>
 
 			<span class="text-sm font-medium">
 				({cart.qty}
-				{#if cart.qty > 1} items {:else} item {/if})
+				{#if cart.qty > 1} פריטים {:else} פריט {/if})
 			</span>
 		</h5>
 
-		<h6 class="mt-1 text-xs tracking-wider text-gray-400">Includes all government taxes</h6>
+		<h6 class="mt-1 text-xs tracking-wider text-gray-400">כולל מע"מ</h6>
 
 		<div class="mt-3">
 			<div class="mt-2 flex items-center justify-between font-medium">
-				<h4>Total</h4>
+				<h4>סך הכל</h4>
 
 				<h4>{cart.formattedAmount?.subtotal || '-'}</h4>
 			</div>
 
 			{#if cart?.savings > 0}
 				<div class="mt-2 flex items-center justify-between font-medium text-green-500">
-					<h4>You Saved</h4>
+					<h4>חסכת בהזמנה זו</h4>
 
 					<h4>
 						{currency(cart?.savings)}
@@ -56,7 +56,7 @@ function submit() {
 			{/if}
 
 			<div class="mt-2 flex items-center justify-between font-medium">
-				<h4>Discount</h4>
+				<h4>הנחה</h4>
 
 				<h4 class="text-green-500">
 					{#if cart?.discount?.amount > 0}
@@ -68,17 +68,17 @@ function submit() {
 			</div>
 
 			<div class="mt-2 flex items-center justify-between font-medium">
-				<h4>Tax</h4>
+				<h4>מע"מ</h4>
 
 				<h4>{cart?.formattedAmount?.tax || '-'}</h4>
 			</div>
 
 			<div class="mt-2 flex items-center justify-between font-medium">
-				<h4>Shipping</h4>
+				<h4>משלוח</h4>
 
 				<h4>
 					{#if cart.shipping?.charge < 1}
-						<span class="text-green-500">Free</span>
+						<span class="text-green-500">חינם!</span>
 					{:else}
 						{currency(cart.shipping?.charge)}
 					{/if}
@@ -95,7 +95,7 @@ function submit() {
 
 		{#if cart.subtotal}
 			<div class="my-2 mb-5 flex items-center justify-between text-lg font-bold ">
-				<h4>Total Amount</h4>
+				<h4>סך הכל</h4>
 
 				{cart.formattedAmount?.total}
 			</div>

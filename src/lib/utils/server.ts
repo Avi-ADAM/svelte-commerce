@@ -7,6 +7,7 @@ import {
 	woocommerceHeaders,
 	MEDUSAJS_BASE_URL
 } from '../config'
+import datavi from './../data/datavi.json'
 
 // import pkg from '@woocommerce/woocommerce-rest-api' // node v-18
 // const WooCommerceRestApi = pkg.default // node v-16
@@ -90,7 +91,7 @@ export async function gett(endpoint: string, ck?: any) {
 }
 export const getBySid = async (endpoint: string, sid?: any) => {
 		console.log(HTTP_ENDPOINT + '/api/' + endpoint,"serverts",sid)
-
+		if (!endpoint.startsWith("init")){
 	const response = await fetch(HTTP_ENDPOINT + '/api/' + endpoint, {
 		method: 'GET',
 		credentials: 'include',
@@ -103,6 +104,9 @@ export const getBySid = async (endpoint: string, sid?: any) => {
 	} else {
 		return res
 	}
+}else{
+	return datavi
+}
 }
 
 export const getMedusajsApi = async (endpoint: string, query: any, sid?: any) => {

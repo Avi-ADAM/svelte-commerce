@@ -295,7 +295,7 @@ function handleMobileCanvas() {
 	</h1>
 </ProductNav>
 
-<div class="mb-20 min-h-screen sm:mb-0 md:p-10">
+<div class="mb-20 min-h-screen sm:mb-0 md:p-10" dir="rtl">
 	<div class="md:container md:mx-auto">
 		<div class="mb-5 flex flex-wrap items-start justify-between gap-4 px-4 pt-4 md:px-0 md:pt-0">
 			<!-- Breadcrumb -->
@@ -429,13 +429,13 @@ function handleMobileCanvas() {
 
 							{#if data.product?.discount > 0}
 								<span class="whitespace-nowrap text-green-600">
-									({data.product?.discount}% off)
+									({data.product?.discount}% הנחה)
 								</span>
 							{/if}
 						{/if}
 					</div>
 
-					<p class="text-sm font-semibold text-green-700">Inclusive of all taxes</p>
+					<p class="text-sm font-semibold text-green-700">כולל מע"מ</p>
 				</div>
 
 				<!-- ratings -->
@@ -459,7 +459,7 @@ function handleMobileCanvas() {
 							</svg>
 						</div>
 
-						<span class="px-2 text-gray-500"> {productReview?.summary?.count} Ratings </span>
+						<span class="px-2 text-gray-500"> {productReview?.summary?.count} דירוג </span>
 					</button>
 				{/if}
 
@@ -469,7 +469,7 @@ function handleMobileCanvas() {
 
 				<div class="mb-5 block sm:hidden">
 					<h6 class="mb-2 flex items-center gap-2 font-semibold uppercase">
-						<span> Delivery Options </span>
+						<span> אפשרויות משלוח </span>
 
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -504,13 +504,13 @@ function handleMobileCanvas() {
 
 							{#if data.product?.discount > 0}
 								<span class="whitespace-nowrap text-lg font-semibold text-[#ff5a5a] sm:text-xl">
-									({data.product?.discount}% off)
+									({data.product?.discount}% הנחה)
 								</span>
 							{/if}
 						{/if}
 					</div>
 
-					<p class="mb-5 text-sm font-semibold text-green-700">Inclusive of all taxes</p>
+					<p class="mb-5 text-sm font-semibold text-green-700">כולל מע"מ</p>
 				</div>
 
 				<!-- New and Tags -->
@@ -540,7 +540,7 @@ function handleMobileCanvas() {
 				{#if data.product?.size}
 					<div class="mb-5">
 						<h6 class="mb-2 flex items-center gap-2 font-semibold uppercase">
-							<span> Select Size </span>
+							<span> בחירת גודל </span>
 
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -753,7 +753,7 @@ function handleMobileCanvas() {
 											clip-rule="evenodd"></path>
 									</svg>
 
-									<span>Wishlisted</span>
+									<span>ברשימת המשאלות</span>
 								{:else}
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
@@ -769,7 +769,7 @@ function handleMobileCanvas() {
 										></path>
 									</svg>
 
-									<span>Wishlist</span>
+									<span>רשימת משאלות</span>
 								{/if}
 							</WhiteButton>
 						</div>
@@ -867,7 +867,7 @@ function handleMobileCanvas() {
 								{/if}
 							{:else}
 								<PrimaryButton type="button" hideLoading class="w-full text-sm" disabled>
-									Item Unavailable
+									מוצר לא זמין
 								</PrimaryButton>
 							{/if}
 						</div>
@@ -879,7 +879,7 @@ function handleMobileCanvas() {
 				{#if data.product?.specifications?.length}
 					<div class="mb-5">
 						<h6 class="mb-2 flex items-center gap-2 font-semibold uppercase">
-							<span> Specification </span>
+							<span> מפרט </span>
 
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -919,7 +919,7 @@ function handleMobileCanvas() {
 				{#if data.product?.description}
 					<div class="mb-5">
 						<h6 class="mb-2 flex items-center gap-2 font-semibold uppercase">
-							<span> Product Details </span>
+							<span> פרטי המוצר </span>
 
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -953,7 +953,7 @@ function handleMobileCanvas() {
 				{#if data.product?.linkedProducts?.length}
 					<div class="mb-5">
 						<h6 class="mb-2 flex items-center gap-2 font-semibold uppercase">
-							<span> Linked Products </span>
+							<span> מוצרים קשורים </span>
 
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -984,7 +984,7 @@ function handleMobileCanvas() {
 				{#if data.product?.longDescription}
 					<div class="prose mb-5">
 						<h6 class="mb-2 flex items-center gap-2 font-semibold uppercase">
-							<span> Description </span>
+							<span> תיאור </span>
 
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -1013,7 +1013,7 @@ function handleMobileCanvas() {
 
 				<div class="mb-5 hidden sm:block">
 					<h6 class="mb-2 flex items-center gap-2 font-semibold uppercase">
-						<span> Delivery Options </span>
+						<span> אפשרויות משלוח </span>
 
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -1039,7 +1039,7 @@ function handleMobileCanvas() {
 
 				<div id="ratings-and-reviews" class="mb-5">
 					<h6 class="mb-2 flex items-center gap-2 font-semibold uppercase">
-						<span> Ratings </span>
+						<span> דירוג </span>
 
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -1161,7 +1161,7 @@ function handleMobileCanvas() {
 											type="button"
 											class="text-sm font-semibold text-primary-500 transition duration-300 focus:outline-none hover:text-primary-700"
 											on:click="{() => handleShowReviewsCount(showReviewsCount)}">
-											Show More
+											הצגת עוד
 										</button>
 									{:else}
 										<button
@@ -1176,7 +1176,7 @@ function handleMobileCanvas() {
 						{/if}
 					{:else}
 						<div class="mb-5 text-sm">
-							No reviews yet, be the first one to review the data.product?.
+							אין דירוג עדיין
 						</div>
 					{/if}
 
@@ -1212,7 +1212,7 @@ function handleMobileCanvas() {
 
 				<div class="mb-5 sm:mb-10">
 					<h2 class="mb-5 text-lg font-bold capitalize sm:text-xl md:text-2xl">
-						Frequently bought together
+						בדרך כלל קונים את חבילת המוצרים הזו יחד
 					</h2>
 
 					<div

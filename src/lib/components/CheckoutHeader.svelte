@@ -9,7 +9,7 @@ export let selected = null
 // isPrescription = false
 </script>
 
-<section class=" flex flex-wrap justify-center">
+<section class=" flex flex-wrap justify-center" dir="rtl">
 	<div
 		class=" flex w-full  justify-between text-center text-xs font-semibold tracking-widest text-gray-700 md:w-2/3 lg:w-1/3">
 		<a
@@ -25,7 +25,7 @@ export let selected = null
 				1
 			</div>
 
-			<div class="mt-1 text-primary-500">Cart</div>
+			<div class="mt-1 text-primary-500">עגלת קניות</div>
 		</a>
 
 		<hr class="dashes mx-3 my-4 flex-1 text-primary-500" />
@@ -71,7 +71,7 @@ export let selected = null
 					2
 				</div>
 
-				<span class="mt-1 text-center text-primary-500">Address</span>
+				<span class="mt-1 text-center text-primary-500">כתובת למשלוח</span>
 			</div>
 		{:else}
 			<a
@@ -91,7 +91,7 @@ export let selected = null
 					2
 				</div>
 
-				<span class="mt-1 text-center text-primary-500">Address</span>
+				<span class="mt-1 text-center text-primary-500">כתובת למשלוח</span>
 			</a>
 		{/if}
 
@@ -112,7 +112,7 @@ export let selected = null
 					3
 				</div>
 
-				<span class="mt-1 text-center text-primary-500">Payment</span>
+				<span class="mt-1 text-center text-primary-500">תשלום</span>
 			</div>
 		{:else}
 			<div class="flex flex-col items-center text-center">
@@ -129,7 +129,7 @@ export let selected = null
 					3
 				</div>
 
-				<span class="mt-1 text-center text-primary-500">Payment</span>
+				<span class="mt-1 text-center text-primary-500">תשלום</span>
 			</div>
 		{/if}
 	</div>

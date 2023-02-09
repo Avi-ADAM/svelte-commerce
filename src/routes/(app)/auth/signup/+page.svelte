@@ -102,21 +102,21 @@ async function submit(n) {
 	<form class="mb-5 flex flex-col gap-5" on:submit|preventDefault="{() => submit(newResistration)}">
 		<TextboxFloating
 			type="text"
-			label="First Name"
+			label="שם פרטי"
 			class="w-full"
 			required
 			bind:value="{newResistration.firstName}" />
 
 		<TextboxFloating
 			type="text"
-			label="Last Name"
+			label="שם משפחה"
 			class="w-full"
 			required
 			bind:value="{newResistration.lastName}" />
 
 		<TextboxFloating
 			type="tel"
-			label="Phone"
+			label="טלפון"
 			class="w-full"
 			required
 			bind:value="{newResistration.phone}" />
@@ -124,23 +124,23 @@ async function submit(n) {
 		<div>
 			<TextboxFloating
 				type="email"
-				label="Email"
+				label="מייל"
 				class="mb-1 w-full"
 				required
 				bind:value="{newResistration.email}" />
-
+<!----
 			<p class="text-xs">
 				Do not have email?
 				<a href="{$page.data.store?.loginUrl}" class="text-primary-500 hover:underline">
 					Sign up using phone number
 				</a>
-			</p>
+			</p>-->
 		</div>
 
 		<div class="relative">
 			<TextboxFloating
 				type="{passwordType}"
-				label="Password"
+				label="סיסמה"
 				class="w-full"
 				required
 				bind:value="{newResistration.password}" />
@@ -187,7 +187,7 @@ async function submit(n) {
 		<div class="relative">
 			<TextboxFloating
 				type="{confirmPasswordType}"
-				label="Confirm Password"
+				label="אישור סיסמה"
 				class="w-full"
 				required
 				bind:value="{newResistration.passwordConfirmation}" />
@@ -231,7 +231,7 @@ async function submit(n) {
 			</button>
 		</div>
 
-		<PrimaryButton type="submit" loading="{loading}" class="w-full">SUMBIT</PrimaryButton>
+		<PrimaryButton type="submit" loading="{loading}" class="w-full">הרשמה</PrimaryButton>
 	</form>
 
 	<div class="mx-auto mb-5 flex max-w-max flex-col gap-1 text-center text-sm">
@@ -239,26 +239,26 @@ async function submit(n) {
 			href="{`${$page.data.store?.loginUrl}?ref=${$page.url.searchParams.get('ref') || '/'}`}"
 			aria-label="Click to signin"
 			class="whitespace-nowrap text-primary-500 hover:text-primary-700 hover:underline">
-			Signin
+			התחברות
 		</a>
-
+<!----
 		<a
 			href="{$page.data.store?.adminUrl}?role=vendor&store={$page.data.store?.id}"
 			aria-label="Click to login as vendor"
 			class="whitespace-nowrap text-primary-500 hover:text-primary-700 hover:underline">
 			Join as Vendor
-		</a>
+		</a>-->
 	</div>
 
 	<p class="text-center text-sm text-gray-500">
-		By clicking login you are accepting our
+		לחיצה על התחברות מאשרת את התנאים וההגבלות שלנו
 		<a
 			href="/terms-conditions"
 			aria-label="Click to route terms & conditions"
 			target="_blank"
 			rel="noopener noreferrer"
 			class="whitespace-nowrap text-primary-500 hover:text-primary-700 hover:underline">
-			<b>Terms & Conditions</b>
+			<b>תנאי השימוש</b>
 		</a>
 	</p>
 </div>

@@ -9,7 +9,7 @@ let showCartSidebar = false
 let openSidebar = false
 </script>
 
-<div class="{showCartSidebar || openSidebar ? 'h-screen overflow-hidden' : 'h-full'}">
+<div dir="rtl" class="{showCartSidebar || openSidebar ? 'h-screen overflow-hidden' : 'h-full'}">
 	<div class="hidden sm:block">
 		<Nav
 			me="{data.me}"

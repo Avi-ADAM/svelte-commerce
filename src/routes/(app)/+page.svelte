@@ -107,22 +107,22 @@ $: heroBanners =
 				</div>
 			{/if}
 		{/await}
-
+				<!---
 		<div class="mb-5 sm:mb-10">
 			<Hero banners="{data.home.banners?.data}" />
 		</div>
 
 		<h1 class="text-center text-2xl font-bold sm:text-3xl">
-			The High Performance and Scalable Ecommerce
+			goimpulse
 		</h1>
-
+	-->
 		<!-- TOP CATEGORIES -->
 
 		{#if data.home?.categories?.data?.length > 0}
 			<div class="mb-5 hidden sm:mb-10 sm:block">
 				<h2
 					class="p-3 py-5 text-center font-serif text-xl font-medium uppercase tracking-wider sm:px-10 sm:text-2xl md:py-10 md:text-3xl xl:text-4xl">
-					TOP COLLECTIONS
+					המומלצים
 				</h2>
 
 				<div class="max-w-screen overflow-x-auto scrollbar-none lg:hidden">
@@ -185,7 +185,7 @@ $: heroBanners =
 				<div class="mb-5 sm:mb-10">
 					<h2
 						class="p-3 py-5 text-center font-serif text-xl font-medium tracking-wider sm:px-10 sm:text-2xl md:py-10 md:text-3xl xl:text-4xl uppercase">
-						BEST OF {$page.data.store?.websiteName} EXCLUSIVE
+						 {$page.data.store?.websiteName} - המיטב של 
 					</h2>
 
 					<HeroBanners heroBanners="{heroBanners}" />
@@ -246,7 +246,7 @@ $: heroBanners =
 					<div class="mb-5 sm:mb-10">
 						<h2
 							class="p-3 py-5 text-center font-serif text-xl font-medium tracking-wider sm:px-10 sm:text-2xl md:py-10 md:text-3xl xl:text-4xl uppercase">
-							POPULAR ON {$page.data.store?.websiteName}
+							{$page.data.store?.websiteName} - פופולארי באתר 
 						</h2>
 
 						<ul
@@ -275,7 +275,7 @@ $: heroBanners =
 				<div>
 					<h2
 						class="p-3 py-5 text-center font-serif text-xl font-medium tracking-wider sm:px-10 sm:text-2xl md:py-10 md:text-3xl xl:text-4xl uppercase">
-						TRENDING ON {$page.data.store?.websiteName}
+						 טרנדי עכשיו
 					</h2>
 
 					<ul

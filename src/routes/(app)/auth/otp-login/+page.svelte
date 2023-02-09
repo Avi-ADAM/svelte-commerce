@@ -106,13 +106,13 @@ function changeNumber() {
 	otpRequestSend = false
 }
 </script>
-
+<!---
 <SEO {...seoProps} />
 
 <div
 	class="frosted container mx-auto flex w-full max-w-sm flex-col rounded-2xl border bg-cover bg-center bg-no-repeat p-10 shadow-2xl"
 	style="background-image: url('/login/bg-lighter.svg');">
-	<h1 class="mb-8 w-full text-center text-2xl font-bold text-primary-500">Login/Register</h1>
+	<h1 class="mb-8 w-full text-center text-2xl font-bold text-primary-500">התחברות/הרשמה</h1>
 
 	{#if !otpRequestSend}
 		<SendOtp
@@ -134,33 +134,33 @@ function changeNumber() {
 			href="{`/auth/login?ref=${$page.url.searchParams.get('ref') || '/'}`}"
 			aria-label="Click to login with email"
 			class="whitespace-nowrap text-primary-500 hover:text-primary-700 hover:underline">
-			Login with Email
+			התחברות עם מייל וסיסמה
 		</a>
 
 		<a
 			href="{`/auth/signup?ref=${$page.url.searchParams.get('ref') || '/'}`}"
 			aria-label="Click to login with email"
 			class="whitespace-nowrap text-primary-500 hover:text-primary-700 hover:underline">
-			Signup
+			הרשמה
 		</a>
 
-		<a
+		--<a
 			href="{$page.data.store?.adminUrl}?role=vendor&store={$page.data.store?.id}"
 			aria-label="Click to login as vendor"
 			class="whitespace-nowrap text-primary-500 hover:text-primary-700 hover:underline">
 			Join as Vendor
-		</a>
+		</a>-
 	</div>
 
 	<p class="text-center text-sm text-gray-500">
-		By clicking send OTP you are accepting our
+		לחיצה על הרשמה מאשרת את התנאים וההגבלות שלנו
 		<a
 			href="/terms-conditions"
 			aria-label="Click to route terms & conditions"
 			target="_blank"
 			rel="noopener noreferrer"
 			class="whitespace-nowrap text-primary-500 hover:text-primary-700 hover:underline">
-			<b>Terms & Conditions</b>
+			<b>תנאים</b>
 		</a>
 	</p>
-</div>
+</div>-->
