@@ -1,6 +1,4 @@
-import { provider } from '$lib/config'
-import type { Error, Product } from '$lib/types'
-import { mapBigcommerceProducts, mapMedusajsProducts, mapWoocommerceProducts } from '$lib/utils'
+import { error } from '@sveltejs/kit'
 import { getAPI } from '$lib/utils/api'
 import {
 	getBigCommerceApi,
@@ -9,8 +7,17 @@ import {
 	getWooCommerceApi,
 	postMedusajsApi
 } from '$lib/utils/server'
+import {
+	mapBigcommerceProducts,
+	mapMedusajsProduct,
+	mapMedusajsAllProducts,
+	mapWoocommerceProducts
+} from '$lib/utils'
+import { provider } from '$lib/config'
 import { serializeNonPOJOs } from '$lib/utils/validations'
-import { error } from '@sveltejs/kit'
+import type { Error, Product } from '$lib/types'
+
+// Search product
 
 export const searchProducts = async ({
 	origin,
@@ -49,7 +56,6 @@ export const searchProducts = async ({
 				break
 			case 'medusajs':
 				res = await postMedusajsApi(`products/search`, { q: 'Shirt' })
-				console.log('zzzzzzzzzzzzzzzzzzzz', products)
 				products = res?.hits
 				count = res?.hits?.length
 				facets = res?.facets || []
@@ -68,6 +74,39 @@ export const searchProducts = async ({
 	}
 }
 
+// Fetch all products
+
+export const fetchProducts = async ({ origin, slug, id, server = false, sid = null }: any) => {
+	try {
+		let res: Product | {} = {}
+		switch (provider) {
+			case 'litekart':
+				if (server) {
+					res = await getBySid(`products?store=${storeId}`, sid)
+				} else {
+					res = await getAPI(`products?store=${storeId}`, origin)
+				}
+				break
+			case 'medusajs':
+				const med = (await getMedusajsApi(`products`, {}, sid)).product
+				res = mapMedusajsAllProducts(med)
+				break
+			case 'bigcommerce':
+				res = await getBigCommerceApi(`products`, {}, sid)
+				break
+			case 'woocommerce':
+				res = await getWooCommerceApi(`products`, {}, sid)
+				break
+		}
+
+		return res?.data || []
+	} catch (e) {
+		throw error(e.status, e.data?.message || e.message)
+	}
+}
+
+// Fetch single product
+
 export const fetchProduct = async ({ origin, slug, id, server = false, sid = null }: any) => {
 	try {
 		let res: Product | {} = {}
@@ -80,8 +119,8 @@ export const fetchProduct = async ({ origin, slug, id, server = false, sid = nul
 				}
 				break
 			case 'medusajs':
-				const me = (await getMedusajsApi(`products/${id}`, {}, sid)).product
-				res = mapMedusajsProducts(me)
+				const med = (await getMedusajsApi(`products/${id}`, {}, sid)).product
+				res = mapMedusajsProduct(med)
 				break
 			case 'bigcommerce':
 				const bi = (await getBigCommerceApi(`products/${id}`, {}, sid)).data
@@ -100,30 +139,7 @@ export const fetchProduct = async ({ origin, slug, id, server = false, sid = nul
 	}
 }
 
-export const fetchProducts = async ({ origin, storeId, server = false, sid = null }: Product[]) => {
-	try {
-		let res: Product | {} = {}
-		switch (provider) {
-			case 'litekart':
-				if (server) {
-					res = await getBySid(`products?store=${storeId}`, sid)
-				} else {
-					res = await getAPI(`products?store=${storeId}`, origin)
-				}
-				break
-			case 'bigcommerce':
-				res = await getBigCommerceApi(`products`, {}, sid)
-				break
-			case 'woocommerce':
-				res = await getWooCommerceApi(`products`, {}, sid)
-				break
-		}
-
-		return res?.data || []
-	} catch (e) {
-		throw error(e.status, e.data?.message || e.message)
-	}
-}
+// Fetch products based on category
 
 export const fetchProductsOfCategory = async ({
 	origin,
@@ -185,6 +201,8 @@ export const fetchProductsOfCategory = async ({
 		throw error(e.status, e.data?.message || e.message)
 	}
 }
+
+// Fetch next product
 
 export const fetchNextPageProducts = async ({
 	origin,
@@ -252,6 +270,8 @@ export const fetchNextPageProducts = async ({
 		throw error(e.status, e.data?.message || e.message)
 	}
 }
+
+// Fetch related products
 
 export const fetchRelatedProducts = async ({
 	origin,

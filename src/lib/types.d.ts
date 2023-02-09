@@ -26,57 +26,92 @@ interface Me {
 	verified?: boolean
 }
 
+interface AllProducts {
+	count: number
+	currentPage: number
+	pageSize: number
+	limit: number
+	products: Product[]
+}
+
 interface Product {
 	_id: string
 	active: boolean
-	name: string
-	slug: string
+	barcode: string
+	brand: Brand
 	brandName: string
 	categoryPool: Category
-	isCustomized: boolean
+	countryOfOrigin: string
+	crossSells: Product[]
+	description: string
+	discount: number
+	ean: string
+	featured: boolean
+	foodType: string
+	groupProduct: Product[]
+	hasStock: boolean
+	height: number
+	hsn: string
 	images?: string[]
 	img?: string
-	layoutTemplateCdn?: string
-	description: string
-	brand: Brand
+	isCustomized: boolean
 	isFnb: boolean
-	foodType: string
-	price: number
-	mrp: number
-	discount: number
-	replaceAllowed: boolean
-	returnAllowed: boolean
-	returnValidityInDays: number
-	replaceValidityInDays: number
-	tags: Tag[]
-	new: boolean
-	size: Size
-	groupProduct: Product[]
-	options: Option[]
-	hasStock: boolean
-	specifications: Specification[]
-	description: string
-	terms: string
+	layoutTemplateCdn?: string
+	length: number
 	linkedProducts: Product[]
 	longDescription: string
-	crossSells: Product[]
-}
-interface Brand {
+	mrp: number
 	name: string
+	new: boolean
+	options: Option[]
+	popularity: number
+	price: number
+	replaceAllowed: boolean
+	replaceValidityInDays: number
+	returnAllowed: boolean
+	returnValidityInDays: number
+	shortDescription: string
+	size: Size
+	sku: string
+	slug: string
+	specifications: Specification[]
+	status: string
+	stock: number
+	tags: Tag[]
+	terms: string
+	varified: boolean
+	weight: number
+	width: number
+}
+
+interface Brand {
+	_id: string
+	name: string
+	slug: string
+	active: boolean
 }
 
 interface Size {
+	_id: string
 	name: string
+	active: boolean
 }
 
 interface Specification {
+	_id: string
 	name: string
 	value: string
+	active: boolean
 }
 
 interface Category {
-	slug: string
+	_id: string
 	name: string
+	slug: string
+	link: string
+	active: boolean
+	new: boolean
+	position: number
 }
 
 interface Option {
@@ -95,6 +130,8 @@ interface Tag {
 	name: string
 	img: string
 	colorCode: string
+	position: number
+	active: boolean
 }
 
 interface ProductVote {
